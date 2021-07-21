@@ -11,12 +11,8 @@ Make sure to have downloaded the following python libraries via pip:
  
 # Usage guide
 - Download the source code as .zip and extract it to a folder on your PC
-- Edit the config.json file and put in your token where it says to
+- Make a config.json file in the same directory as main.py and put {"token":"your token here"} in it (your token obviously replacing the placeholder text)
 - Run main.py and you should be good
 
 # What to do if there are any problems
-<<<<<<< HEAD
 If the script crashes on startup you should be able to run it within IDLE or Visual Studio Code and see an error message, create an issue and put the error message in it along with the description of your problem
-=======
-If the script crashes on startup you should be able to run it within IDLE or Visual Studio Code and see an error message, create an issue and put the error message in it along with the description of your problem
->>>>>>> 8e3e13c88538c282b9f36560259a9f35c63d655c
