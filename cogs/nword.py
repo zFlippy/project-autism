@@ -1,23 +1,24 @@
 import discord
 from discord.ext import commands
 
-class nwordcounter(commands.Cog):
+class nword(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-    @commands.command()
-    async def nigger(self, ctx):
-        acounter = 0
-        rcounter = 0
-        wcounter = 0
+    @commands.command(aliases=["nwordcount", "nwordcounter"])
+    async def nword(self, ctx):
+        acounter, rcounter, wcounter = 0
+        
         async for message in ctx.channel.history(limit=1000):
             if message.author == message.author:
                 if "nigger" in str(message.content):
                     rcounter += 1
                     wcounter +=1
+                    
                 if "nigga" in str(message.content):
                     acounter += 1
                     wcounter += 1
+                    
         embed = discord.Embed(
             title="NWord Counter",
             description=("I said the NWord "+(str(wcounter))+" times in the last 1000 messages, of which "+(str(acounter))+" ended with an 'a' and "+(str(rcounter))+" ended with the hard r"),
@@ -29,8 +30,6 @@ class nwordcounter(commands.Cog):
         await ctx.message.delete()
         await ctx.send(embed=embed)
 
-
-
-
+        
 def setup(client):
-    client.add_cog(nigger(client))
+    client.add_cog(nword(client))
