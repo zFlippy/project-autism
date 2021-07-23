@@ -7,7 +7,9 @@ class nword(commands.Cog):
 
     @commands.command(aliases=["nwordcount", "nwordcounter"])
     async def nword(self, ctx):
-        acounter, rcounter, wcounter = 0
+        acounter = 0
+        rcounter = 0
+        wcounter = 0
         
         async for message in ctx.channel.history(limit=1000):
             if message.author == message.author:

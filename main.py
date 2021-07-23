@@ -20,7 +20,7 @@ async def on_ready():
 
 @client.command()
 async def ping(ctx):
-    embed = discord.Embed(
+    embed = discord.Embed(  
         title = "Ping",
         description = f"{round(client.latency*1000)}ms",
         color = discord.Color.green()
