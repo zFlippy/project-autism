@@ -17,6 +17,12 @@ client.remove_command("help")
 async def on_ready():
     os.system("cls")
     print(f"PROJECT AUTISM\nLogged in as: {client.user.name}#{client.user.discriminator}")
+   
+@client.event
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.CommandInvokeError):
+        await ctx.send("An error occured, please make sure to use the command correctly.")
+        await ctx.message.delete()
 
 @client.command()
 async def ping(ctx):
