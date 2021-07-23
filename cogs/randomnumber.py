@@ -2,18 +2,20 @@ import discord
 from discord.ext import commands
 import random
 
-
-
-
 class randomnumbergen(commands.Cog):
     def __init__(self, client):
         self.client = client
 
     @commands.command(aliases=["rn", "randnumber", "randnum"])
     async def randomnumber(self, ctx, number1="1", number2="100"):
-        i = int(number1)
-        i2 = int(number2)
-        ir = random.randint(i, i2)
+        try:
+            i = int(number1)
+            i2 = int(number2)
+            ir = random.randint(i, i2)
+        except:
+            await ctx.send("You can only use numbers.")
+            await ctx.message.delete()
+            return
 
         embed = discord.Embed(
             title="Random Number Generator",
@@ -25,7 +27,6 @@ class randomnumbergen(commands.Cog):
 
         await ctx.send(embed=embed)
         await ctx.message.delete()
-
 
 def setup(client):
     client.add_cog(randomnumbergen(client))
