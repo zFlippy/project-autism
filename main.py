@@ -16,7 +16,7 @@ client.remove_command("help")
 @client.event
 async def on_ready():
     os.system("cls")
-    print(f"PROJECT AUTISM\nLogged in as: {client.user.name}#{client.user.discriminator}")
+        
 
 @client.command()
 async def ping(ctx):
