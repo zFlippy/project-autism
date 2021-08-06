@@ -16,7 +16,7 @@ class Ratio(commands.Cog):
 
         ratio_msg = await ctx.send(msg)
 
-        await ratio_msg.add_reaction("👍")
+        await ratio_msg.add_reaction("❤️")
         await ratio_msg.add_reaction("🔁")
         await ratio_msg.add_reaction("💬")
 def setup(client):
